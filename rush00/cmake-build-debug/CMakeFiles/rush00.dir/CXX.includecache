@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/osloboda/study/piscine_cpp/rush00/srcs/main.cpp
+ncurses.h
+-
+iostream
+-
+curses.h
+-
+
