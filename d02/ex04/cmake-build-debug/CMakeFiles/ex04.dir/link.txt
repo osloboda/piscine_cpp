@@ -1,0 +1,1 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/ex04.dir/Fixed.cpp.o CMakeFiles/ex04.dir/main.cpp.o CMakeFiles/ex04.dir/eval_expr.cpp.o  -o ex04 
