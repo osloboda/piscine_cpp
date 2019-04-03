@@ -6,7 +6,7 @@
 /*   By: osloboda <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 20:36:15 by osloboda          #+#    #+#             */
-/*   Updated: 2019/04/03 20:10:33 by osloboda         ###   ########.fr       */
+/*   Updated: 2019/04/02 20:36:32 by osloboda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ FragTrap::FragTrap()
 
 FragTrap::FragTrap(std::string name): name(name)
 {
-	std::cout << "Inicial constructor called" << std::endl;
 	this->hit_points = 100;
 	this->energy_points = 100;
 	this->max_hit_points = 100;
@@ -33,7 +32,6 @@ FragTrap::FragTrap(std::string name): name(name)
 
 FragTrap::FragTrap(FragTrap const &D)
 {
-	std::cout << "Copy constructor called" << std::endl;
 	*this = D;
 }
 
@@ -42,47 +40,47 @@ FragTrap::~FragTrap()
 	std::cout << "Destructor called" << std::endl;
 }
 
-int FragTrap::get_Armor_damage_reduction()
+int FragTrap::get_Armor_damage_reduction() const
 {
 	return (this->Armor_damage_reduction);
 }
 
-int FragTrap::get_Melee_attack_damage()
+int FragTrap::get_Melee_attack_damage() const
 {
 	return (this->Melee_attack_damage);
 }
 
-int FragTrap::get_Ranged_attack_damage()
+int FragTrap::get_Ranged_attack_damage() const
 {
 	return (this->Ranged_attack_damage);
 }
 
-int FragTrap::get_hit_point()
+int FragTrap::get_hit_point() const
 {
 	return this->hit_points;
 }
 
-int FragTrap::get_energy_point()
+int FragTrap::get_energy_point() const
 {
 	return this->energy_points;
 }
 
-int FragTrap::get_max_hit_point()
+int FragTrap::get_max_hit_point() const
 {
 	return this->max_hit_points;
 }
 
-int FragTrap::get_level()
+int FragTrap::get_level() const
 {
 	return this->level;
 }
 
-int FragTrap::get_max_energy_point()
+int FragTrap::get_max_energy_point() const
 {
 	return this->max_energy_points;
 }
 
-std::string FragTrap::get_name()
+std::string FragTrap::get_name() const
 {
 	return this->name;
 }
@@ -138,4 +136,16 @@ void FragTrap::vaulthunter_dot_exe(std::string const &target)
 		srand(time(NULL));
 		std::cout << "FR4G-TP <" << this->get_name() << "> damaged <" << target << "> with " << funny_attacks[std::rand() % 5] << std::endl;
 	}
+}
+
+FragTrap& FragTrap::operator = (const FragTrap &D)
+{
+	this->hit_points = D.get_hit_point();
+	this->energy_points = D.get_energy_point();
+	this->level = D.get_level();
+	this->name = D.get_name();
+	this->Melee_attack_damage = D.get_Melee_attack_damage();
+	this->Ranged_attack_damage = D.get_Ranged_attack_damage();
+	this->Armor_damage_reduction = D.get_Armor_damage_reduction();
+	return (*this);
 }

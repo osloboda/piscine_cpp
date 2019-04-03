@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: osloboda <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/02 20:37:36 by osloboda          #+#    #+#             */
-/*   Updated: 2019/04/02 20:38:23 by osloboda         ###   ########.fr       */
+/*   Created: 2019/04/02 20:36:40 by osloboda          #+#    #+#             */
+/*   Updated: 2019/04/02 20:37:31 by osloboda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
-#include <iostream>
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-int main(void)
+#include "ClapTrap.hpp"
+
+class FragTrap : public ClapTrap
 {
-	FragTrap r1("Idiot");
-	r1.meleeAttack("human");
-	r1.rangedAttack("pelikan");
-	r1.beRepaired(20);
-	r1.takeDamage(40);
-	r1.beRepaired(20);
-	r1.takeDamage(100);
-	r1.takeDamage(20);
-	r1.beRepaired(100);
-	r1.takeDamage(20);
-	r1.vaulthunter_dot_exe("guy");
-	return (0);
-}
+	public:
+		FragTrap();
+		~FragTrap();
+		FragTrap(std::string name);
+		FragTrap(FragTrap const &);
+		void vaulthunter_dot_exe(std::string const & target);
+		FragTrap& operator = (const FragTrap &);
+};
+
+#endif

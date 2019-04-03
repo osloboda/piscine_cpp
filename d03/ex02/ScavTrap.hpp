@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: osloboda <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/02 20:37:36 by osloboda          #+#    #+#             */
-/*   Updated: 2019/04/02 20:38:23 by osloboda         ###   ########.fr       */
+/*   Created: 2019/04/03 14:49:13 by osloboda          #+#    #+#             */
+/*   Updated: 2019/04/03 14:49:17 by osloboda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
-#include <iostream>
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-int main(void)
+#include "ClapTrap.hpp"
+
+class ScavTrap : public ClapTrap
 {
-	FragTrap r1("Idiot");
-	r1.meleeAttack("human");
-	r1.rangedAttack("pelikan");
-	r1.beRepaired(20);
-	r1.takeDamage(40);
-	r1.beRepaired(20);
-	r1.takeDamage(100);
-	r1.takeDamage(20);
-	r1.beRepaired(100);
-	r1.takeDamage(20);
-	r1.vaulthunter_dot_exe("guy");
-	return (0);
-}
+	public:
+		ScavTrap();
+		ScavTrap(std::string name);
+		ScavTrap(ScavTrap const &);
+		~ScavTrap();
+		void challengeNewcomer();
+		ScavTrap& operator = (const ScavTrap &D);
+};
+
+#endif

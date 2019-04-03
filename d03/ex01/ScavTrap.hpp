@@ -1,41 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: osloboda <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/02 20:36:40 by osloboda          #+#    #+#             */
-/*   Updated: 2019/04/02 20:37:31 by osloboda         ###   ########.fr       */
+/*   Created: 2019/04/03 14:49:13 by osloboda          #+#    #+#             */
+/*   Updated: 2019/04/03 14:49:17 by osloboda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-#include <string>
+#include "FragTrap.hpp"
 
-class FragTrap
+class ScavTrap
 {
 	public:
-		FragTrap();
-		~FragTrap();
-		FragTrap(std::string name);
-		FragTrap(FragTrap const &);
+		ScavTrap();
+		ScavTrap(std::string name);
+		ScavTrap(ScavTrap const &);
+		~ScavTrap();
 		void rangedAttack(std::string const & target);
 		void meleeAttack(std::string const & target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
-		void vaulthunter_dot_exe(std::string const & target);
-		std::string get_name();
-		int get_hit_point();
-		int get_energy_point();
-		int get_max_hit_point();
-		int get_max_energy_point();
-		int get_level();
-		int get_Melee_attack_damage();
-		int get_Ranged_attack_damage();
-		int get_Armor_damage_reduction();
+		std::string get_name() const;
+		int get_hit_point() const;
+		int get_energy_point() const;
+		int get_max_hit_point() const;
+		int get_max_energy_point() const;
+		int get_level() const;
+		int get_Melee_attack_damage() const;
+		int get_Ranged_attack_damage() const;
+		int get_Armor_damage_reduction()const;
+		void challengeNewcomer();
+		ScavTrap& operator = (const ScavTrap &D);
 
 	private:
 		int hit_points;
