@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++14
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/osloboda/study/piscine_cpp/d04/ex00/. 
+CXX_INCLUDES = -I/Users/osloboda/study/piscine_cpp/d04/ex01/. 
 

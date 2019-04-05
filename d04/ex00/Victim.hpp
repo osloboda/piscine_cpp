@@ -10,4 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef VICTIM_HPP
+# define VICTIM_HPP
 
+#include <string>
+
+class Victim
+{
+    public:
+        Victim(void);
+        Victim(std::string name);
+        Victim(Victim &copy);
+        Victim &operator=(Victim const &rhs);
+        ~Victim(void);
+        std::string getName(void) const;
+        void getPolymorphed() const;
+    private:
+        std::string name;
+};
+
+std::ostream &operator << (std::ostream &os, Victim const &obj);
+
+#endif
