@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class FragTrap : public virtual ClapTrap
 {
 	public:
 		FragTrap();
@@ -24,6 +24,11 @@ class FragTrap : public ClapTrap
 		FragTrap(FragTrap const &);
 		void vaulthunter_dot_exe(std::string const & target);
 		FragTrap& operator = (const FragTrap &);
+
+	protected:
+		int energy_points;
+		int max_energy_points;
+		int Melee_attack_damage;
 };
 
 #endif

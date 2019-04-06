@@ -6,7 +6,7 @@
 #    By: osloboda <osloboda@student.unit.ua>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/04 14:11:49 by osloboda          #+#    #+#              #
-#    Updated: 2019/03/31 17:38:59 by osloboda         ###   ########.fr        #
+#    Updated: 2019/04/06 20:08:24 by osloboda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ FSRC = $(addprefix $(SRCDIR)/, $(SRC))
 
 INCDIR = includes
 
-FLAGS = -g -Wall -Werror -Wextra  -std=c++0x -pthread
+FLAGS = -g -Wall -Werror -Wextra  -std=c++98 -pthread
 
 .PHONY: all clean fclean re
 

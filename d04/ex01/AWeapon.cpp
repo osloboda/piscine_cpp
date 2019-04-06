@@ -1,11 +1,11 @@
 #include "AWeapon.hpp"
 
-AWeapon::AWeapon(std::string const &name, int apcost, int damage) : name(name), apcost(apcost), damage(damage)
+AWeapon::AWeapon(std::string const &name, int apcost, int damage) : name(name), damage(damage), apcost(apcost)
 {
     return ;
 }
 
-AWeapon::AWeapon(void): name("?"), apcost(0), damage(0)
+AWeapon::AWeapon(void): name("?"), damage(0), apcost(0)
 {
     return ;
 }
@@ -37,5 +37,8 @@ int AWeapon::getDamage() const
 
 AWeapon &AWeapon::operator=(AWeapon const &D)
 {
+	this->damage = D.getDamage();
+	this->apcost = D.getAPCost();
+	this->name = D.getName();
     return *this;
 }

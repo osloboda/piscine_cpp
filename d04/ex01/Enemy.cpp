@@ -22,6 +22,8 @@ Enemy::Enemy(Enemy const &D)
 
 Enemy &Enemy::operator=(Enemy const &D)
 {
+    this->hp = D.getHP();
+    this->type = D.getType();
     return *this;
 }
 

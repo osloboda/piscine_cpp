@@ -17,7 +17,7 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
-class NinjaTrap : public ClapTrap
+class NinjaTrap : public virtual ClapTrap
 {
 	public:
 		NinjaTrap();
@@ -29,6 +29,12 @@ class NinjaTrap : public ClapTrap
         void ninjaShoebox(FragTrap const &) const;
         void ninjaShoebox(ScavTrap const &) const;
 		NinjaTrap& operator = (const NinjaTrap &);
+
+	protected:
+		int hit_points;
+		int max_hit_points;
+		int Ranged_attack_damage;
+		int Armor_damage_reduction;
 };
 
 #endif
