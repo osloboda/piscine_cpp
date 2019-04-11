@@ -1,8 +1,7 @@
-
 #include <iostream>
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(std::string name, int grade) : name(name), grade(grade)
+Bureaucrat::Bureaucrat(std::string name, int grade) : grade(grade), name(name)
 {
     if (grade < 1)
         throw Bureaucrat::GradeTooHighException();
@@ -26,6 +25,60 @@ Bureaucrat::Bureaucrat()
 Bureaucrat::~Bureaucrat()
 {
     return;
+}
+
+Bureaucrat::GradeTooHighException::GradeTooHighException()
+{
+    return;
+}
+
+Bureaucrat::GradeTooHighException::GradeTooHighException(GradeTooHighException const &D)
+{
+    *this = D;
+    return;
+}
+
+Bureaucrat::GradeTooHighException::~GradeTooHighException() throw()
+{
+    return;
+}
+
+Bureaucrat::GradeTooHighException &Bureaucrat::GradeTooHighException::operator = (GradeTooHighException const &D)
+{
+    (void)D;
+    return (*this);
+}
+
+Bureaucrat::GradeTooLowException::GradeTooLowException()
+{
+    return;
+}
+
+Bureaucrat::GradeTooLowException::GradeTooLowException(GradeTooLowException const &D)
+{
+    *this = D;
+    return;
+}
+
+Bureaucrat::GradeTooLowException::~GradeTooLowException() throw()
+{
+    return;
+}
+
+Bureaucrat::GradeTooLowException &Bureaucrat::GradeTooLowException:: operator = (GradeTooLowException const &D)
+{
+    (void)D;
+    return (*this);
+}
+
+const char* Bureaucrat::GradeTooHighException::what() const throw()
+{
+    return ("Error: grade < 1");
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw()
+{
+    return ("Error: grade > 150");
 }
 
 void Bureaucrat::incrementGrade()
@@ -54,7 +107,7 @@ int Bureaucrat::getGrade() const
     return grade;
 }
 
-std::ostream & operator<<(std::ostream &os, Bureaucrat const &D)
+std::ostream & operator << (std::ostream &os, Bureaucrat const &D)
 {
     return os << D.getName() << ", bureaucrat grade " << D.getGrade() << std::endl;;
 }

@@ -2,6 +2,7 @@
 #include "Form.hpp"
 
 Form::Form(std::string const name, int sgrade, int grade) : grade(grade), name(name), is_signed(false), sgrade(sgrade)
+
 {
     if (sgrade < 1 || grade < 1)
         throw Form::GradeTooHighException();

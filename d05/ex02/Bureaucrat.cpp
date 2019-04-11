@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include "Bureaucrat.hpp"
 
@@ -26,6 +25,17 @@ Bureaucrat::Bureaucrat()
 Bureaucrat::~Bureaucrat()
 {
     return;
+}
+
+void Bureaucrat::executeForm(Form const &D)
+{
+    if (this->grade < D.getGrade())
+    {
+        std::cout << "Bureaucrat " << this->name << " executes " << D.getName() << std::endl;
+        D.execute(*this);
+    }
+    else
+        std::cout << "Bureaucrat " << this->name << " grade is low" << std::endl;
 }
 
 Bureaucrat::GradeTooHighException::GradeTooHighException()

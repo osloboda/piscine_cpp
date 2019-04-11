@@ -16,10 +16,26 @@ public:
     Bureaucrat& operator = (Bureaucrat const &);
     const std::string &getName() const;
     int getGrade() const;
-    class GradeTooHighException : public std::exception {};
-    class GradeTooLowException : public std::exception {};
     void incrementGrade();
     void decrementGrade();
+    class GradeTooHighException : public std::exception
+    {
+        public:
+            GradeTooHighException();
+            GradeTooHighException(GradeTooHighException const &);
+            virtual ~GradeTooHighException() throw();
+            virtual const char* what() const throw();
+            GradeTooHighException &operator = (GradeTooHighException const &);
+    };
+    class GradeTooLowException : public std::exception
+    {
+        public:
+            GradeTooLowException();
+            GradeTooLowException(GradeTooLowException const &);
+            virtual ~GradeTooLowException() throw();
+            virtual const char* what() const throw();
+            GradeTooLowException &operator = (GradeTooLowException const &);
+    };
 };
 
 std::ostream & operator<<(std::ostream &os, Bureaucrat const &);

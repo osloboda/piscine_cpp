@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include "Bureaucrat.hpp"
 
@@ -20,7 +19,8 @@ int main(void)
     }
     try
     {
-        Bureaucrat man("man", 151);
+        Bureaucrat man("man", 60);
+        std::cout << man << std::endl;
     }
     catch(std::exception &D)
     {

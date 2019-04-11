@@ -1,43 +1,21 @@
-
 #include <iostream>
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main(void)
 {
-    Bureaucrat loser("good", 6);
-    loser.incrementGrade();
-    loser.incrementGrade();
-    loser.incrementGrade();
-    loser.incrementGrade();
-    loser.incrementGrade();
+    Bureaucrat bureaucrat("bureaucrat", 5);
+    Form		form("Declaration of Independence", 50, 50);
+    std::cout << form << std::endl;
+    form.beSigned(bureaucrat);
+    std::cout << form << std::endl;
+    form.beSigned(bureaucrat);
     try
     {
-        loser.incrementGrade();
-    }
-    catch(std::exception &D)
-    {
-        std::cout << D.what() << std::endl;
-    }
-    try
-    {
-        Bureaucrat man("man", 151);
-    }
-    catch(std::exception &D)
-    {
-        std::cout << D.what() << std::endl;
-    }
-    try
-    {
-        Bureaucrat man("man", 0);
-    }
-    catch(std::exception &D)
-    {
-        std::cout << D.what() << std::endl;
-    }
-    try
-    {
-        Bureaucrat man("man", 150);
-        man.decrementGrade();
+        Bureaucrat bureaucrat("bureaucrat", 51);
+        Form form("Declaration of Independence", 50, 50);
+        form.beSigned(bureaucrat);
+        std::cout << form << std::endl;
     }
     catch(std::exception &D)
     {

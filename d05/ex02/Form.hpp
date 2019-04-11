@@ -4,6 +4,8 @@
 #include <string>
 #include "Bureaucrat.hpp"
 
+class Bureaucrat;
+
 class Form
 {
     private:
@@ -22,6 +24,7 @@ class Form
         bool getSigned() const;
         int getSGrade() const;
         void signForm();
+        virtual void execute(Bureaucrat const &D) const = 0;
         void beSigned(Bureaucrat &);
         class GradeTooHighException : public std::exception
         {
